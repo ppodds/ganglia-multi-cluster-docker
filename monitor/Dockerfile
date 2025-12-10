@@ -8,6 +8,8 @@ COPY start.sh /usr/local/bin/start.sh
 COPY conf/cluster1-gmetad.conf /etc/ganglia/
 COPY conf/cluster2-gmetad.conf /etc/ganglia/
 COPY conf/monitor-gmetad.conf /etc/ganglia/
+COPY conf/cluster1-gmond.conf /etc/ganglia/
+COPY conf/cluster2-gmond.conf /etc/ganglia/
 
 RUN ln -s /etc/ganglia-webfrontend/apache.conf /etc/apache2/sites-enabled/000-ganglia.conf
 

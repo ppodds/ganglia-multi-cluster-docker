@@ -13,4 +13,8 @@ fi
 
 /usr/sbin/gmetad -c "$gmetad_config"
 /usr/sbin/apachectl start
-/usr/sbin/gmond -f -c /etc/ganglia/gmond.conf
+if [ -z "$CLUSTER" ]; then
+  /usr/sbin/gmond -f -c /etc/ganglia/gmond.conf
+else
+  /usr/sbin/gmond -f -c /etc/ganglia/$CLUSTER-gmond.conf
+fi
